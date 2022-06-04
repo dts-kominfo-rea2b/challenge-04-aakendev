@@ -9,15 +9,17 @@ const dates = [
 
 // TODO: Buatlah fungsi createDate
 const createDate = (date, pos) => {
+  const arrayDate = [];
   const arraySortDate = [];
   for(sortdate of date.sort()){
+    arrayDate.push((Date.parse(sortdate)) / 1000);
     arraySortDate.push((Date.parse(sortdate)) / 1000);
   }
   if(pos === undefined){
     const joinDate = arraySortDate.join("-");
-    return joinDate;
+    return joinDate.toString();
   } else {
-    return arraySortDate[pos];
+    return arrayDate[pos].toString();
   }
 };
 
